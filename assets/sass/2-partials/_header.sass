@@ -5,6 +5,9 @@
 html
   font-family: $main-font
 
+body
+  overflow-x: hidden
+
 
 .nav-wrapper
   width: 250px
@@ -12,9 +15,7 @@ html
   min-height: 350px
   position: fixed
   background: #fff
-  border-right: 1px solid #202020
-  transform: translateX(-251px)
-  transition: all 0.5s linear
+  box-shadow: inset 0px 0px 10px #404040
 
 .nav-display
   width: 100%
@@ -23,15 +24,17 @@ html
   display: flex
   align-items: center
   justify-content: center
-  opacity: 0
   transform: translateX(-30px)
   transition: all 0.5s ease 0.3s
 
+  &.active-nav
+    transform: translateX(0)
+
   h1
     position: absolute
-    font-size: 100px
-    left: 70px
-    top: 60px
+    font-size: 120px
+    left: 60px
+    top: 50px
 
   ul
     list-style: none
@@ -46,57 +49,6 @@ html
       text-decoration: none
       color: #202020
 
-    span
-      // position: absolute
-      // right: 0
-      // top: 5px
-
-.nav-icon
-  width: 32px
-  height: 30px
-  position: absolute
-  top: 15px
-  right: -40px
-  cursor: pointer
-  z-index: 100
-  transition: all 0.5s linear
-
-  span
-    width: 27px
-    height: 3px
-    background: #202020
-    position: absolute
-    transition: all 0.5s linear
-
-    &:nth-child(1)
-      width: 20px
-      top: 4px
-      left: 12px
-      transform: rotate(45deg)
-    &:nth-child(2)
-      top: 10px
-      left: 2px
-      transform: translate
-    &:nth-child(3)
-      width: 20px
-      top: 16px
-      left: 12px
-      transform: rotate(-45deg)
-
-    &:nth-child(1).active-span
-      width: 20px
-      top: 4px
-      left: 0px
-      transform: rotate(135deg)
-    &:nth-child(2).active-span
-      top: 10px
-      left: 2px
-      transform: translate
-    &:nth-child(3).active-span
-      width: 20px
-      top: 16px
-      left: 0px
-      transform: rotate(-135deg)
 
 //**********************************
 //  Javascript DOM
@@ -104,7 +56,3 @@ html
 
 .active-nav-icon
   right: 10px
-
-.active-nav
-  opacity: 1
-  transform: translateX(0)

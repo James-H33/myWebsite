@@ -6,7 +6,20 @@
   width: 100%
   height: 100vh
   min-height: 500px
+  background: #ccc
+  position: relative
+  left: 250px
+  z-index: 1
+  transform: translateX(-250px)
+  transition: all 0.5s linear
+
+  &.active-wrapper
+    transform: translateX(0)
+
 
 .about-display
   width: 100%
   height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
