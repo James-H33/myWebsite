@@ -7,12 +7,16 @@
   height: 100vh
   background: #f9f9f9
   position: relative
-  left: 250px
-  transform: translateX(-250px)
   transition: all 0.5s linear
 
   &.active-wrapper
-    transform: translateX(0)
+    transform: translateX(250px)
+
+@media (min-width: 769px)
+
+  .intro-wrapper
+    width: calc(100% - 250px)
+    transform: translateX(250px)
 
 .intro-display
   width: 100%
@@ -23,51 +27,3 @@
 
   h1
     font-size: 50px
-
-.nav-icon
-  width: 32px
-  height: 30px
-  position: absolute
-  top: 15px
-  left: 10px
-  cursor: pointer
-  z-index: 10
-  // transition: all 0.5s linear
-
-  span
-    width: 27px
-    height: 3px
-    background: #202020
-    position: absolute
-    z-index: 1000
-    transition: all 0.5s linear
-
-    &:nth-child(1)
-      width: 20px
-      top: 4px
-      left: 12px
-      transform: rotate(45deg)
-    &:nth-child(2)
-      top: 10px
-      left: 2px
-      transform: translate
-    &:nth-child(3)
-      width: 20px
-      top: 16px
-      left: 12px
-      transform: rotate(-45deg)
-
-    &:nth-child(1).active-span
-      width: 20px
-      top: 4px
-      left: 0px
-      transform: rotate(135deg)
-    &:nth-child(2).active-span
-      top: 10px
-      left: 2px
-      transform: translate
-    &:nth-child(3).active-span
-      width: 20px
-      top: 16px
-      left: 0px
-      transform: rotate(-135deg)
