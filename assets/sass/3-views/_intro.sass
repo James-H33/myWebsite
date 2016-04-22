@@ -8,7 +8,7 @@
   min-height: 500px
   max-height: 700px
   background:
-    image: url("../imgs/portfolioBackground.png")
+    image: url("../imgs/myWebBackground.png")
     size: cover
     position: center
     repeat: no-repeat
@@ -35,19 +35,32 @@
 
 
   h1
-    color: #000
-    font-size: 40px
+    color: $black
+    font-size: 35px
     // text-shadow: 0px 1px 3px #303030
 
     span
       color: $teal
 
   p
-    color: #000
+    color: $black
     font-size: 15px
     font-style: italic
     letter-spacing: 0.6px
     // text-shadow: 0px 1px 3px #303030
+
+@media (min-width: 500px)
+
+  .intro-display
+
+    h1
+      font-size: 40px
+
+    p
+      font-size: 20px
+
+
+
 
 @media (min-width: 769px)
 
