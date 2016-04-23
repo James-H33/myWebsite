@@ -1,0 +1,99 @@
+//**********************************
+//  PROJECT STYLES
+//**********************************
+
+.projects-wrapper
+  width: 100%
+  height: 500px
+  background: #fff
+  position: relative
+  transition: all 0.5s linear
+
+  &.active-wrapper
+    transform: translateX(250px)
+
+@media (min-width: 769px)
+
+  .projects-wrapper
+    width: calc(100% - 250px)
+    transform: translateX(250px)
+
+.projects-display
+  width: 100%
+  height: 100%
+
+
+  li
+    width: 200px
+    height: 200px
+    list-style: none
+
+    img
+      width: 100%
+      height: 100%
+
+//**********************************
+//  PROJECT INCLUDES STYLES
+//**********************************
+
+.thumb
+  width: 100%
+  height: 100%
+
+  a
+    width: 25%
+    display: block
+    float: left
+    position: relative
+    overflow: hidden
+
+  li
+    width: 100%
+    height: 100%
+    text-align: center
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+
+    h3
+      margin-top: 30%
+
+    &:after
+      content: ''
+      display: block
+      padding-top: 100%
+
+.project1
+  background: url('http://im.rediff.com/news/2016/mar/01smith1.jpg')
+.project2
+  background: url('http://www.guineapighub.com/img/Guinea-Pigs-cross1.jpg')
+.project3
+  background: url('http://www.datemplate.com/postpic/2010/10/guinea-pig-baked-potato_248428.jpg')
+.project4
+  background: url('http://2.bp.blogspot.com/-O4oZ09l_D_Y/TmFmRgQzwKI/AAAAAAAAEco/-7G9Xu26WoY/s1600/Funny%20Guinea%20Pig%20pics2.jpg')
+.project5
+  background: url('https://s-media-cache-ak0.pinimg.com/236x/5d/84/8d/5d848dd808bf603c08a3fbc57dc59ba1.jpg')
+.project6
+  background: url('https://s-media-cache-ak0.pinimg.com/236x/90/26/6f/90266fdc869c477ff196f67d2df2eeda.jpg')
+.project7
+  background: url('http://funny-pics.co/wp-content/uploads/funny-guinea-pig-animals-moments.jpg')
+.project8
+  background: url('http://funny-pics.co/wp-content/uploads/funny-guinea-pig-animals-moments.jpg')
+
+
+
+.thumb-info
+  width: 100%
+  height: 0
+  background: rgba(20, 20, 20, 0.6)
+  overflow-y: hidden
+  position: absolute
+  bottom: 0
+  transition: 0.3s linear
+
+  h3
+    color: #ccc
+
+
+.thumb a:hover .thumb-info
+  height: 100%

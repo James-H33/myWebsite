@@ -17,13 +17,13 @@ html
         h1 hj
         ul
           li: a(href="#") Intro 
-            span(class="fa fa-angle-left",aria-hidden="true")
+            //- span(class="fa fa-angle-left",aria-hidden="true")
           li: a(href="#") About 
-            span(class="fa fa-angle-left",aria-hidden="true")
+            //- span(class="fa fa-angle-left",aria-hidden="true")
           li: a(href="#") Skills 
-            span(class="fa fa-angle-left",aria-hidden="true")
-          li: a(href="#") Contact 
-              span(class="fa fa-angle-left",aria-hidden="true")
+            //- span(class="fa fa-angle-left",aria-hidden="true")
+          li: a(href="#") Projects 
+              //- span(class="fa fa-angle-left",aria-hidden="true")
               
     section.intro-wrapper
       div.intro-display
@@ -54,7 +54,7 @@ html
             li Mongo/MongoDB
         div.new-skills
           h1 What's next?
-          ul
+          div.new
             li
               i(class="fa fa-code",aria-hidden="true")
               h1 Angular 2
@@ -68,8 +68,11 @@ html
               h1 Advanced Animations
               p For drawling attention to aspects of a site and creating a fun experience. 
     
-    section.contact-wrapper
-      div.contact-display
-        h1 It's me again
+    section.projects-wrapper
+      div.projects-display
+        include ./includes/_projects-include.jade 
+    
+        
+        
       
     script(type="text/javascript", src="assets/js/function.js")

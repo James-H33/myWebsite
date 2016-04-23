@@ -3,7 +3,8 @@
   margin: 0; }
 
 html {
-  font-family: "Montserrat", sans-serif; }
+  font-family: "Montserrat", sans-serif;
+  height: 100%; }
 
 body {
   overflow-x: hidden; }
@@ -94,28 +95,25 @@ body {
   .nav-icon span {
     width: 27px;
     height: 3px;
-    background: #333333;
+    background: #16a085;
     position: absolute;
-    box-shadow: 0px 0px 5px #505050;
     -webkit-transition: all 0.5s linear;
     transition: all 0.5s linear; }
     .nav-icon span:nth-child(1) {
-      width: 20px;
       top: 4px;
-      left: 12px;
-      -webkit-transform: rotate(45deg);
-      transform: rotate(45deg); }
+      left: 2px;
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg); }
     .nav-icon span:nth-child(2) {
       top: 10px;
       left: 2px;
       -webkit-transform: translate;
       transform: translate; }
     .nav-icon span:nth-child(3) {
-      width: 20px;
       top: 16px;
-      left: 12px;
-      -webkit-transform: rotate(-45deg);
-      transform: rotate(-45deg); }
+      left: 2px;
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg); }
     .nav-icon span:nth-child(1).active-span {
       width: 20px;
       top: 4px;
@@ -352,34 +350,39 @@ body {
     transform: translateX(250px); } }
 .new-skills {
   width: 100%;
+  height: auto;
+  margin: 50px 0; }
+
+.new {
+  width: 100%;
   height: 100%;
-  margin: 20px 0; }
-  .new-skills ul {
-    list-style: none; }
-    .new-skills ul li {
-      width: 250px;
-      height: 300px;
-      font-size: 16px;
-      display: inline-block;
-      vertical-align: middle;
-      border-radius: 4px;
-      margin: 0px 10px; }
-      .new-skills ul li h1 {
-        font-size: 20px; }
-      .new-skills ul li i {
-        font-size: 55px;
-        margin-top: 40px; }
-      .new-skills ul li:nth-child(1) i {
-        color: #16a085;
-        -webkit-animation: 1s ease infinite shake;
-        animation: 1s ease infinite shake; }
-      .new-skills ul li:nth-child(3) i {
-        color: #16a085;
-        -webkit-animation: 1s ease infinite spin;
-        animation: 1s ease infinite spin; }
-      .new-skills ul li p {
-        width: 95%;
-        margin: 0 auto; }
+  padding: 30px 0; }
+  .new li {
+    width: 250px;
+    height: 280px;
+    font-size: 16px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 4px;
+    margin: 0px 10px; }
+    .new li h1 {
+      font-size: 20px;
+      padding: 10px 0; }
+    .new li i {
+      font-size: 55px;
+      margin-top: 30px; }
+    .new li:nth-child(1) i {
+      color: #16a085;
+      -webkit-animation: 1s ease infinite shake;
+      animation: 1s ease infinite shake; }
+    .new li:nth-child(3) i {
+      color: #16a085;
+      -webkit-animation: 1s ease infinite spin;
+      animation: 1s ease infinite spin; }
+    .new li p {
+      width: 95%;
+      margin: 0 auto; }
 
 @-webkit-keyframes listTransform {
   0%, 9% {
@@ -478,3 +481,91 @@ body {
   80% {
     -webkit-transform: rotate(-30deg);
     transform: rotate(-30deg); } }
+.projects-wrapper {
+  width: 100%;
+  height: 500px;
+  background: #fff;
+  position: relative;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear; }
+  .projects-wrapper.active-wrapper {
+    -webkit-transform: translateX(250px);
+    transform: translateX(250px); }
+
+@media (min-width: 769px) {
+  .projects-wrapper {
+    width: calc(100% - 250px);
+    -webkit-transform: translateX(250px);
+    transform: translateX(250px); } }
+.projects-display {
+  width: 100%;
+  height: 100%; }
+  .projects-display li {
+    width: 200px;
+    height: 200px;
+    list-style: none; }
+    .projects-display li img {
+      width: 100%;
+      height: 100%; }
+
+.thumb {
+  width: 100%;
+  height: 100%; }
+  .thumb a {
+    width: 25%;
+    display: block;
+    float: left;
+    position: relative;
+    overflow: hidden; }
+  .thumb li {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; }
+    .thumb li h3 {
+      margin-top: 30%; }
+    .thumb li:after {
+      content: "";
+      display: block;
+      padding-top: 100%; }
+
+.project1 {
+  background: url("http://im.rediff.com/news/2016/mar/01smith1.jpg"); }
+
+.project2 {
+  background: url("http://www.guineapighub.com/img/Guinea-Pigs-cross1.jpg"); }
+
+.project3 {
+  background: url("http://www.datemplate.com/postpic/2010/10/guinea-pig-baked-potato_248428.jpg"); }
+
+.project4 {
+  background: url("http://2.bp.blogspot.com/-O4oZ09l_D_Y/TmFmRgQzwKI/AAAAAAAAEco/-7G9Xu26WoY/s1600/Funny%20Guinea%20Pig%20pics2.jpg"); }
+
+.project5 {
+  background: url("https://s-media-cache-ak0.pinimg.com/236x/5d/84/8d/5d848dd808bf603c08a3fbc57dc59ba1.jpg"); }
+
+.project6 {
+  background: url("https://s-media-cache-ak0.pinimg.com/236x/90/26/6f/90266fdc869c477ff196f67d2df2eeda.jpg"); }
+
+.project7 {
+  background: url("http://funny-pics.co/wp-content/uploads/funny-guinea-pig-animals-moments.jpg"); }
+
+.project8 {
+  background: url("http://funny-pics.co/wp-content/uploads/funny-guinea-pig-animals-moments.jpg"); }
+
+.thumb-info {
+  width: 100%;
+  height: 0;
+  background: rgba(20, 20, 20, 0.6);
+  overflow-y: hidden;
+  position: absolute;
+  bottom: 0;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear; }
+  .thumb-info h3 {
+    color: #ccc; }
+
+.thumb a:hover .thumb-info {
+  height: 100%; }
