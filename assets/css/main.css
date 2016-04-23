@@ -483,7 +483,7 @@ body {
     transform: rotate(-30deg); } }
 .projects-wrapper {
   width: 100%;
-  height: 500px;
+  height: 100%;
   background: #fff;
   position: relative;
   -webkit-transition: all 0.5s linear;
@@ -510,19 +510,31 @@ body {
 
 .thumb {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  overflow-x: hidden; }
   .thumb a {
-    width: 25%;
+    width: 33.33%;
     display: block;
     float: left;
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    opacity: 0;
+    -webkit-transform: translateX(-50px);
+    transform: translateX(-50px);
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+    .thumb a.tada-thumb {
+      -webkit-animation: 1s tada;
+      animation: 1s tada; }
+    .thumb a.active-thumb {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1; }
   .thumb li {
     width: 100%;
     height: 100%;
     text-align: center;
     background-size: cover;
-    background-position: center;
     background-repeat: no-repeat; }
     .thumb li h3 {
       margin-top: 30%; }
@@ -531,29 +543,37 @@ body {
       display: block;
       padding-top: 100%; }
 
+@media (min-width: 769px) {
+  .thumb a {
+    width: 25%; } }
 .project1 {
-  background: url("http://im.rediff.com/news/2016/mar/01smith1.jpg"); }
+  background: url("../imgs/blackBirdClothingCrop.png");
+  background-position: center; }
 
 .project2 {
-  background: url("http://www.guineapighub.com/img/Guinea-Pigs-cross1.jpg"); }
+  background: url("../imgs/earthHubCrop.png");
+  background-position: center; }
 
 .project3 {
-  background: url("http://www.datemplate.com/postpic/2010/10/guinea-pig-baked-potato_248428.jpg"); }
+  background: url("../imgs/egg-picture.png"); }
 
 .project4 {
-  background: url("http://2.bp.blogspot.com/-O4oZ09l_D_Y/TmFmRgQzwKI/AAAAAAAAEco/-7G9Xu26WoY/s1600/Funny%20Guinea%20Pig%20pics2.jpg"); }
+  background: url("../imgs/foundationHomesCrop.png");
+  background-position: center; }
 
 .project5 {
-  background: url("https://s-media-cache-ak0.pinimg.com/236x/5d/84/8d/5d848dd808bf603c08a3fbc57dc59ba1.jpg"); }
+  background: url("../imgs/selectVettes.png"); }
 
 .project6 {
-  background: url("https://s-media-cache-ak0.pinimg.com/236x/90/26/6f/90266fdc869c477ff196f67d2df2eeda.jpg"); }
+  background: url("../imgs/trevsJekyllCrop.png");
+  background-position: center; }
 
 .project7 {
-  background: url("http://funny-pics.co/wp-content/uploads/funny-guinea-pig-animals-moments.jpg"); }
+  background: url("../imgs/trevsLandscapeCrop.png");
+  background-position: center; }
 
 .project8 {
-  background: url("http://funny-pics.co/wp-content/uploads/funny-guinea-pig-animals-moments.jpg"); }
+  background: url("../imgs/oldPortfolio.png"); }
 
 .thumb-info {
   width: 100%;
@@ -569,3 +589,37 @@ body {
 
 .thumb a:hover .thumb-info {
   height: 100%; }
+
+@-webkit-keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  10%, 20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg); }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg); }
+  40%, 60%, 80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
+
+@keyframes tada {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); }
+  10%, 20% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg); }
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg); }
+  40%, 60%, 80% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg); }
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1); } }
