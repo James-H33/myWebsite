@@ -1,12 +1,12 @@
-var navIcon       = document.querySelector('.nav-icon');
-var navSpan       = document.querySelectorAll('.nav-icon span');
-var navWrapper    = document.querySelector('.nav-wrapper');
-var navDisplay    = document.querySelector('.nav-display ul');
-var navH1         = document.querySelector('.nav-display h1');
-var aboutWrapper  = document.querySelector('.about-wrapper');
-var introWrapper  = document.querySelector('.intro-wrapper');
-var skillsWrapper = document.querySelector('.skills-wrapper');
-
+var navIcon        = document.querySelector('.nav-icon');
+var navSpan        = document.querySelectorAll('.nav-icon span');
+var navWrapper     = document.querySelector('.nav-wrapper');
+var navDisplay     = document.querySelector('.nav-display ul');
+var navH1          = document.querySelector('.nav-display h1');
+var aboutWrapper   = document.querySelector('.about-wrapper');
+var introWrapper   = document.querySelector('.intro-wrapper');
+var skillsWrapper  = document.querySelector('.skills-wrapper');
+var projectWrapper = document.querySelector('.projects-wrapper');
 
 
 navIcon.addEventListener('click', function() {
@@ -18,6 +18,7 @@ navIcon.addEventListener('click', function() {
   aboutWrapper.classList.toggle('active-wrapper');
   introWrapper.classList.toggle('active-wrapper');
   skillsWrapper.classList.toggle('active-wrapper');
+  projectWrapper.classList.toggle('active-wrapper');
   navSpanTransform();
 
 })
