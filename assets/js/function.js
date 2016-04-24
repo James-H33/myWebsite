@@ -1,6 +1,7 @@
 var navIcon        = document.querySelector('.nav-icon');
 var navSpan        = document.querySelectorAll('.nav-icon span');
 var navWrapper     = document.querySelector('.nav-wrapper');
+var navLinks       = document.querySelectorAll('.nav-display a');
 var navDisplay     = document.querySelector('.nav-display ul');
 var navH1          = document.querySelector('.nav-display h1');
 var aboutWrapper   = document.querySelector('.about-wrapper');
@@ -8,6 +9,8 @@ var introWrapper   = document.querySelector('.intro-wrapper');
 var skillsWrapper  = document.querySelector('.skills-wrapper');
 var projectWrapper = document.querySelector('.projects-wrapper');
 var projects       = document.querySelectorAll('.thumb a');
+var thumb          = document.querySelector('.thumb');
+var linkLocation;
 
 
 
@@ -25,23 +28,25 @@ navIcon.addEventListener('click', function() {
 
   navSpanTransform();
 
-})
+});
 
 
 
 // Functions being called //
   randomNum(32);
   tadaRandom();
+  // linksClicked();
 
 
 
 // ON SCROLL FUNCTIONS
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function(event) {
+  event.preventDefault();
+  event.stopPropagation();
   var top_distance = document.body.scrollTop;
-  var thumb = document.querySelector('.thumb');
   var thumb_top = getElementDistance(thumb);
-  console.log(thumb_top)
 
+  var element_top = getElementDistance(skillsWrapper);
   // Moves nav icon down on scroll
   navIcon.style.top = top_distance + 15 + 'px';
 
@@ -50,8 +55,12 @@ window.addEventListener('scroll', function() {
     projectTransform();
   }
 
+
 })
 
+//*********************************************
+// FUNCTIONS
+//*********************************************
 
 
 // Cycles through each span of the nav icon
@@ -84,7 +93,6 @@ function randomNum(num){
 
 // Cycles through each project and attaches an animation to them.
 function tadaRandom() {
-  // var randomProject = [5, 3, 7, 2, 6, 1, 8, 4];
     for(var i = 0; i < 32;i++) {
       (function(i) {
         setTimeout(function(){
@@ -94,12 +102,17 @@ function tadaRandom() {
     }
 }
 
+// NavLinks Click Events
+// function linksClicked() {
+//   var links = document.querySelectorAll('.nav-display a');
+//   for (var i = 0; links.length; i++) {
+//     links[i].addEventListener('click', function() {
+//       console.log(this.getAttribute('name'));
+//       var linkLocation = this.getAttribute('name');
+//     });
+//   }
+// }
 
-
-
-
-// Get window location from top of page
-var position = window.OffsetTop;
 
 // Get Elements distance from top of page
 var getElementDistance = function (elem) {
@@ -112,3 +125,36 @@ var getElementDistance = function (elem) {
   }
   return location >= 0 ? location : 0;
 }
+
+
+//*********************************************
+// Jquery
+//*********************************************
+
+// JQuery is subsituting for the javascript I can't do without it. :/
+$(document).ready(function() {
+
+  $('.nav-display a').click(function(event) {
+
+    if (this.getAttribute('name') === 'link1') {
+      $('html,body').animate({
+          scrollTop: $('.intro-wrapper').offset().top},
+          1000);
+    } else if (this.getAttribute('name') === 'link2') {
+      $('html,body').animate({
+          scrollTop: $('.about-wrapper').offset().top},
+          1000);
+    } else if (this.getAttribute('name') === 'link3') {
+      $('html,body').animate({
+          scrollTop: $('.skills-wrapper').offset().top},
+          1000);
+    } else {
+      $('html,body').animate({
+          scrollTop: $('.projects-wrapper').offset().top},
+          1000);
+    }
+
+  });
+
+
+})
