@@ -15,14 +15,17 @@ body {
   min-height: 350px;
   position: fixed;
   background: #fff;
+  opacity: 0;
   -webkit-transition: all 0.3s linear 0.3s;
   transition: all 0.3s linear 0.3s; }
   .nav-wrapper.active-nav {
-    width: 250px; }
+    width: 250px;
+    opacity: 1; }
 
 @media (min-width: 769px) {
   .nav-wrapper {
-    width: 250px; } }
+    width: 250px;
+    opacity: 1; } }
 .nav-display {
   width: 100%;
   height: 100%;
@@ -142,7 +145,7 @@ body {
   position: relative;
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear; }
-  .footer-wrapper.active-nav {
+  .footer-wrapper.active-wrapper {
     -webkit-transform: translateX(250px);
     transform: translateX(250px); }
 

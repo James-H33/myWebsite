@@ -10,6 +10,7 @@ var skillsWrapper  = document.querySelector('.skills-wrapper');
 var projectWrapper = document.querySelector('.projects-wrapper');
 var projects       = document.querySelectorAll('.thumb a');
 var thumb          = document.querySelector('.thumb');
+var footerWrapper  = document.querySelector('.footer-wrapper');
 var linkLocation;
 
 
@@ -17,15 +18,7 @@ var linkLocation;
 // NavIcon Click Events
 navIcon.addEventListener('click', function() {
 
-  navIcon.classList.toggle('active-nav-icon');
-  navWrapper.classList.toggle('active-nav');
-  navDisplay.classList.toggle('active-nav');
-  navH1.classList.toggle('active-nav');
-  aboutWrapper.classList.toggle('active-wrapper');
-  introWrapper.classList.toggle('active-wrapper');
-  skillsWrapper.classList.toggle('active-wrapper');
-  projectWrapper.classList.toggle('active-wrapper');
-
+  navToggleAll();
   navSpanTransform();
 
 });
@@ -102,6 +95,18 @@ function tadaRandom() {
     }
 }
 
+function navToggleAll() {
+  navIcon.classList.toggle('active-nav-icon');
+  navWrapper.classList.toggle('active-nav');
+  navDisplay.classList.toggle('active-nav');
+  navH1.classList.toggle('active-nav');
+  aboutWrapper.classList.toggle('active-wrapper');
+  introWrapper.classList.toggle('active-wrapper');
+  skillsWrapper.classList.toggle('active-wrapper');
+  projectWrapper.classList.toggle('active-wrapper');
+  footerWrapper.classList.toggle('active-wrapper');
+}
+
 // NavLinks Click Events
 // function linksClicked() {
 //   var links = document.querySelectorAll('.nav-display a');
@@ -154,6 +159,7 @@ $(document).ready(function() {
           1000);
     }
 
+    navToggleAll();
   });
 
 
