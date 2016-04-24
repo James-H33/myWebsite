@@ -6,6 +6,7 @@ html
     link(href='https://fonts.googleapis.com/css?family=Montserrat:400,700',rel='stylesheet',type='text/css')
     link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css")
     link(rel="stylesheet",type="text/css",href="assets/css/main.css")
+    script(src="https://code.jquery.com/jquery-2.2.3.min.js", integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=", crossorigin="anonymous")
     title Hall James | Portfolio
   body
     div.nav-icon
@@ -16,14 +17,10 @@ html
       div.nav-display
         h1 hj
         ul
-          li: a(href="#") Intro 
-            //- span(class="fa fa-angle-left",aria-hidden="true")
-          li: a(href="#") About 
-            //- span(class="fa fa-angle-left",aria-hidden="true")
-          li: a(href="#") Skills 
-            //- span(class="fa fa-angle-left",aria-hidden="true")
-          li: a(href="#") Projects 
-              //- span(class="fa fa-angle-left",aria-hidden="true")
+          li: a(href="#", name="link1") Intro 
+          li: a(href="#", name="link2") About 
+          li: a(href="#", name="link3") Skills 
+          li: a(href="#", name="link4") Projects 
               
     section.intro-wrapper
       div.intro-display
@@ -70,7 +67,9 @@ html
     
     section.projects-wrapper
       div.projects-display
-        include ./includes/_projects-include.jade 
+        include ./includes/_projects-include.jade
+    
+    include ./includes/_footer-include.jade
     
         
         
