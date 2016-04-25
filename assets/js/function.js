@@ -159,7 +159,12 @@ $(document).ready(function() {
           1000);
     }
 
+    event.preventDefault();
+    event.stopPropagation();
+
+    // When a navigation link is click the following function close the navigation menuu on small screens
     navToggleAll();
+    navSpanTransform();
   });
 
 
