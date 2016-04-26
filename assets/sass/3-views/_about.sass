@@ -14,6 +14,7 @@
   &.active-wrapper
     transform: translateX(250px)
 
+
 @media (min-width: 769px)
 
   .about-wrapper
@@ -32,12 +33,20 @@
   justify-content: center
   align-items: center
   text-align: center
+  opacity: 0
+  transform: translateX(300px)
+  transition: all 0.5s linear
+
+  &.display-slide
+    transform: translateX(0)
+    opacity: 1
 
   h1
     color: $teal
     font-size: 30px
     letter-spacing: 0.6px
     padding: 40px 0
+    animation: flash 2s linear infinite
 
   p
     color: #d4d4d4
@@ -45,9 +54,16 @@
     line-height: 38px
     letter-spacing: 0.6px
 
+
 @media (min-width: 769px)
 
   .about-display
 
     h1
       font-size: 40px
+
+@keyframes flash
+  0%, 100%
+    opacity: 0
+  50%
+    opacity: 1
