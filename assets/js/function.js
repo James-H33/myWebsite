@@ -8,9 +8,10 @@ var aboutWrapper   = document.querySelector('.about-wrapper');
 var introWrapper   = document.querySelector('.intro-wrapper');
 var skillsWrapper  = document.querySelector('.skills-wrapper');
 var projectWrapper = document.querySelector('.projects-wrapper');
+var footerWrapper  = document.querySelector('.footer-wrapper');
+var aboutDisplay   = document.querySelector('.about-display');
 var projects       = document.querySelectorAll('.thumb a');
 var thumb          = document.querySelector('.thumb');
-var footerWrapper  = document.querySelector('.footer-wrapper');
 var linkLocation;
 
 
@@ -28,27 +29,29 @@ navIcon.addEventListener('click', function() {
 // Functions being called //
   randomNum(32);
   tadaRandom();
-  // linksClicked();
 
 
 
 // ON SCROLL FUNCTIONS
 window.addEventListener('scroll', function(event) {
-  event.preventDefault();
-  event.stopPropagation();
-  var top_distance = document.body.scrollTop;
+  var body_top = document.body.scrollTop;
   var thumb_top = getElementDistance(thumb);
-
   var element_top = getElementDistance(skillsWrapper);
-  // Moves nav icon down on scroll
-  navIcon.style.top = top_distance + 15 + 'px';
+  var about_top = getElementDistance(aboutDisplay);
+
+  navIconScrollTop();
 
   // Sets the scroll location that will activate the function
-  if(top_distance >= thumb_top - 400) {
+  if(body_top >= thumb_top - 400) {
     projectTransform();
+  }
+  if(body_top >= about_top - this.innerHeight / 2) {
+    aboutDisplayTransform();
   }
 
 
+  event.preventDefault();
+  event.stopPropagation();
 })
 
 //*********************************************
@@ -74,6 +77,10 @@ function projectTransform() {
   }
 }
 
+function aboutDisplayTransform(){
+  aboutDisplay.classList.add('display-slide');
+}
+
 // Generates an array of random number who's length is set by num -- This code should probably be refactored.
 function randomNum(num){
   projectArray = [];
@@ -93,6 +100,13 @@ function tadaRandom() {
         }, 5000 * (i+1));
       })(i);
     }
+}
+
+// Scroll down navIcon
+function navIconScrollTop(){
+  var top_distance = document.body.scrollTop;
+  // Moves nav icon down on scroll
+  navIcon.style.top = top_distance + 15 + 'px';
 }
 
 function navToggleAll() {

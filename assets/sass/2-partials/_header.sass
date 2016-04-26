@@ -60,11 +60,13 @@ body
 
   ul
     list-style: none
+    opacity: 0
     transform: translateX(-30px)
-    transition: all 0.5s ease 0.3s
+    transition: all 1s ease 0.3s
 
     &.active-nav
       transform: translateX(0)
+      opacity: 1
 
 
   li
@@ -83,6 +85,7 @@ body
 
     ul
       transform: translateX(0)
+      opacity: 1
 
     h1
       position: absolute
