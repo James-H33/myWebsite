@@ -13,7 +13,7 @@ var aboutDisplay   = document.querySelector('.about-display');
 var projects       = document.querySelectorAll('.thumb a');
 var thumb          = document.querySelector('.thumb');
 var linkLocation;
-
+var projectArray;
 
 
 // NavIcon Click Events
@@ -34,15 +34,12 @@ navIcon.addEventListener('click', function() {
 
 // ON SCROLL FUNCTIONS
 window.addEventListener('scroll', function(event) {
-  var body_top = document.body.scrollTop;
-  var thumb_top = getElementDistance(thumb);
-  var element_top = getElementDistance(skillsWrapper);
-  var about_top = getElementDistance(aboutDisplay);
-
-  navIconScrollTop();
+  var body_top = $(window).scrollTop();
+  var projects_top = projectWrapper.offsetTop;
+  var about_top = aboutWrapper.offsetTop;
 
   // Sets the scroll location that will activate the function
-  if(body_top >= thumb_top - 400) {
+  if(body_top >= projects_top - 400) {
     projectTransform();
   }
   if(body_top >= about_top - this.innerHeight / 2) {
@@ -84,6 +81,7 @@ function aboutDisplayTransform(){
 // Generates an array of random number who's length is set by num -- This code should probably be refactored.
 function randomNum(num){
   projectArray = [];
+
   for(var i = 0; i < num; i++) {
     var randomProject = Math.floor((Math.random() * 8) + 1);
     projectArray.push(randomProject);
@@ -93,7 +91,7 @@ function randomNum(num){
 
 // Cycles through each project and attaches an animation to them.
 function tadaRandom() {
-    for(var i = 0; i < 32;i++) {
+    for(var i = 0; i < 32; i++) {
       (function(i) {
         setTimeout(function(){
           projects[projectArray[i]].classList.toggle('tada-thumb');
@@ -121,20 +119,8 @@ function navToggleAll() {
   footerWrapper.classList.toggle('active-wrapper');
 }
 
-// NavLinks Click Events
-// function linksClicked() {
-//   var links = document.querySelectorAll('.nav-display a');
-//   for (var i = 0; links.length; i++) {
-//     links[i].addEventListener('click', function() {
-//       console.log(this.getAttribute('name'));
-//       var linkLocation = this.getAttribute('name');
-//     });
-//   }
-// }
-
-
 // Get Elements distance from top of page
-var getElementDistance = function (elem) {
+function getElementDistance(elem) {
   var location = 0;
   if (elem.offsetParent) {
       do {
@@ -144,6 +130,8 @@ var getElementDistance = function (elem) {
   }
   return location >= 0 ? location : 0;
 }
+
+// hello
 
 
 //*********************************************

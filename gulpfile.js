@@ -8,7 +8,7 @@ var prefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync');
 
 
-gulp.task('default', ['styles', 'templates', 'server'], function(){});
+gulp.task('default', ['styles', 'script', 'templates', 'server'], function(){});
 
 gulp.task('styles', function() {
   return sass('assets/sass/main.sass')
@@ -31,13 +31,13 @@ gulp.task('templates', function() {
             .pipe(browserSync.reload({stream: true}));
 });
 
-// gulp.task('script', function(){
-//   return gulp.src('assets/js/*.js')
-//             .pipe(plumber())
-//             .pipe(uglify())
-//             .pipe(gulp.dest('assets/js/*-min.js'))
-//             .pipe(browserSync.reload({stream: true}));
-// });
+gulp.task('script', function(){
+  return gulp.src('assets/js/*.js')
+            .pipe(plumber())
+            .pipe(uglify())
+            .pipe(gulp.dest('assets/js-min/'))
+            .pipe(browserSync.reload({stream: true}));
+});
 
 gulp.task('server', function() {
   browserSync.init({
@@ -48,6 +48,6 @@ gulp.task('server', function() {
 
   gulp.watch('./**/*.jade', ['templates']);
   gulp.watch('./**/*.sass', ['styles']);
-  // gulp.watch('./**/*.js', ['script']);
+  gulp.watch('./assets/js/*.js', ['script']);
   gulp.watch('./**/*.html').on('change', browserSync.reload);
 });
